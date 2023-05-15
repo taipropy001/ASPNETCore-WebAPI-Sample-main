@@ -7,9 +7,7 @@ trigger:
 - main
 
 pool:
-  name: az400m05l05a-pool
-  demands:
-    agent.name -equals az400m05-vm0
+  vmImage: 'windows-2019'
 
 variables:
   solution: '**/*.sln'
