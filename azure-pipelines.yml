@@ -20,6 +20,7 @@ stages:
     - name: BuildParameters.TestProjects
       value: '**/*[Tt]ests/*.csproj'
     - group: yaml-config
+    - group: environment-variable
 
     displayName: Build Job
     pool:
@@ -38,6 +39,7 @@ stages:
       inputs:
         projects: $(BuildParameters.RestoreBuildProjects)
         arguments: --configuration $(BuildConfiguration)
+    
     - task: DotNetCoreCLI@2
       displayName: Test
       inputs:
