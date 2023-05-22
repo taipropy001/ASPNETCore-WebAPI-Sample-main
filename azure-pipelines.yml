@@ -4,12 +4,17 @@ trigger:
 pool:
   name: Azure Pipelines
 
+variables:
+- group: yaml-config
+- name: buildConfiguration
+  value: $[variables.BuildConfiguration]
+
 steps:
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
     command: restore
-    projects: '$(Parameters.RestoreBuildProjects)'
+    projects: '$(variables.buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: Build
