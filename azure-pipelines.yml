@@ -81,5 +81,4 @@ stages:
         deployToSlotOrASE: true
         ResourceGroupName: 'vn-training-ttt'
         SlotName: 'Staging'
-        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
